@@ -30,7 +30,7 @@ public class Solution9 {
 
         for(int i=0; i < index;){
            c = nextChar(c);
-            if(skip.contains(String.valueOf(c))) c =;
+            if(skip.contains(String.valueOf(c))) c = getNextChar(c,skip,index);
             i++;
         }
 
