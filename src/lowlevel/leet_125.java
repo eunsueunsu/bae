@@ -15,7 +15,7 @@ public class leet_125 {
 
 
         s=  s.toLowerCase();
-        s=  s.replaceAll("\\W|\s+|[_]","");
+        s=  s.replaceAll("\\W|\\s+|[_]","");
 
         char[] input = new char[s.length()];
         input = s.toCharArray();
