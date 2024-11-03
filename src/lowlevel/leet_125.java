@@ -1,6 +1,8 @@
 package lowlevel;
 
+import java.util.LinkedList;
 import java.util.Locale;
+import java.util.Queue;
 
 public class leet_125 {
 
@@ -9,28 +11,63 @@ public class leet_125 {
         solution("race a car");
     }
 
+//    public static boolean solution(String s) {
+//
+//        boolean result = true;
+//
+//
+//        s=  s.toLowerCase();
+//        s=  s.replaceAll("\\W|\\s+|[_]","");
+//
+//        char[] input = new char[s.length()];
+//        input = s.toCharArray();
+//
+//        int backward = s.length()-1;
+//        int forward = 0;
+//        if (s.equals("")) return result;
+//        while(backward>forward){
+//
+//
+//            if(  input[backward]!=input[forward]){
+//                result = false;
+//            }
+//            backward--; forward++;
+//        }
+//        return result ;
+//    }
+
+    // 정규식 사용 안하기
+
     public static boolean solution(String s) {
 
-        boolean result = true;
 
 
-        s=  s.toLowerCase();
-        s=  s.replaceAll("\\W|\\s+|[_]","");
-
-        char[] input = new char[s.length()];
-        input = s.toCharArray();
-
-        int backward = s.length()-1;
         int forward = 0;
-        if (s.equals("")) return result;
-        while(backward>forward){
+        int backward = s.length()-1;
 
+        while( forward < backward){
 
-            if(  input[backward]!=input[forward]){
-                result = false;
+            char cf  = s.charAt(forward);
+            char cb = s.charAt(backward);
+            if(!Character.isLetterOrDigit(cf)){
+                forward++;
+            }else if(!Character.isLetterOrDigit(cb)){
+                backward--;
+            }else{
+
+                if(Character.toLowerCase(cf)!=Character.toLowerCase(cb)){
+                    return false;
+
+                }else{
+                    forward++;
+                    backward--;
+                }
             }
-            backward--; forward++;
         }
-        return result ;
+
+        return true;
     }
+
+
+
 }
