@@ -37,6 +37,7 @@ public class leet_125 {
 //    }
 
     // 정규식 사용 안하기
+    // 졍규식 빼면 15초 개선
 
     public static boolean solution(String s) {
 
