@@ -1,6 +1,8 @@
 package lowlevel;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class leet_242 {
 
@@ -29,29 +31,41 @@ Output: true
  2. sorted 후 비교
 
 */
-    public static boolean isAnagram(String s, String t){
+    public static boolean isAnagram(String s, String t) {
 
-        HashMap<Character,Integer> map = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
-        for(char c : s.toCharArray() ){
-           if(map.containsKey(c)){
-               map.put(c,map.get(c)+1);
-           }else{
-               map.put(c,0);
-           }
-        }
+//        for(char c : s.toCharArray() ){
+//           if(map.containsKey(c)){
+//               map.put(c,map.get(c)+1);
+//           }else{
+//               map.put(c,0);
+//           }
+//        }
+//
+//        for(char c: t.toCharArray()){
+//            if(map.containsKey(c)){
+//                if(map.get(c)>0){
+//                    map.put(c,map.get(c)-1);
+//                }else{
+//                    map.remove(c);
+//                }
+//            }else{
+//                return false;
+//            }
+//        }
+//        return map.isEmpty();
 
-        for(char c: t.toCharArray()){
-            if(map.containsKey(c)){
-                if(map.get(c)>0){
-                    map.put(c,map.get(c)-1);
-                }else{
-                    map.remove(c);
-                }
-            }else{
-                return false;
-            }
-        }
-        return map.isEmpty();
+
+
+
+        char[] sarr = s.toCharArray();
+        char[] tarr = t.toCharArray();
+
+        Arrays.sort(sarr);
+        Arrays.sort(tarr);
+
+        return Arrays.equals(sarr,tarr);
+
     }
 }
