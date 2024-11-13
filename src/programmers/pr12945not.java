@@ -1,6 +1,6 @@
 package programmers;
 
-public class pr12945 {
+public class pr12945not {
 
     /*
     *  n번째 피보나치 수열 구해서 1234567로 나눠주기
