@@ -15,10 +15,11 @@ public class pr42842 {
         int sum = brown + yellow;
 
         for(int w = sum-1; w > 0; w--){
-
+// 큰수부터 나눠지는 수 찾기
             if(sum%w !=0) continue;
-
+// 나눠질때 높이 할당
             int h = sum/w;
+            // 구해진 가로세로로 노랑격자 크기 계산
             int yellowSize = (w-2) * (h-2);
             int brownSize = sum-yellowSize;
 
@@ -30,7 +31,10 @@ public class pr42842 {
         }
 return answer;
 
- /*       br = (a*b) - ye
+ /*
+
+
+ br = (a*b) - ye
         br + ye = a*b
 
          yellow =   (x-2) * (y-2)
